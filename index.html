@@ -98,7 +98,7 @@
 				controls.screenSpacePanning = false;
 
 				controls.minDistance = 50;
-				controls.maxDistance = 500
+				controls.maxDistance = 500;
 
 				controls.maxPolarAngle = Math.PI / 2;
 
@@ -117,6 +117,7 @@
 					$(".matbutton").click(function() {
 					  console.log("click", this.id);
 					  mesh.material = materials[this.id];
+					  mesh.material.side = THREE.DoubleSide;
 					  render();
 					});
 					objLoader.setLogging( true, true );
@@ -125,6 +126,7 @@
 					  mesh.scale.set(.01, .01, .01);
 					  scene.add( mesh );
 					  window.mesh = mesh;
+					  mesh.material.side = THREE.DoubleSide;
 					  render();
 					  console.log(mesh);
 					  console.log( 'Loading complete: ' + event.detail.modelName );
