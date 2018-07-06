@@ -40,6 +40,19 @@
 			button:active {
 			  background-color: cyan;
 			}
+
+      .modelInstr {
+        display: flex;
+        text-align: center;
+        position: fixed;
+        z-index: 0;
+        top: 15px;
+        right: 15px;
+      }
+      
+      figure {
+        margin: 0px 15px;
+      }
 		</style>
 
 	</head>
@@ -47,6 +60,21 @@
 	<body>
 
     <div id="info"><h1 id="title">Mt Ngauruhoe</h1></div>
+    
+    <div class="modelInstr">
+	    <figure id="instrLeft">
+	      <img src="./icons/mouse_left.png" alt="Left mouse to tilt."/>
+	      <figcaption>Tilt</figcaption>
+	    </figure>
+	    <figure id="instrRight">
+	      <img src="./icons/mouse_right.png" alt="Right mouse to pan."/>
+	      <figcaption>Pan</figcaption>
+	    </figure>
+	    <figure id="instrPan">
+	      <img src="./icons/mouse_scroll.svg" alt="Scroll to zoom."/>
+	      <figcaption>Zoom</figcaption>
+	    </figure>
+    </div>
 	
   	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 		
