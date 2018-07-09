@@ -23,6 +23,7 @@
 				position: absolute;
 				top: 0px; width: 100%;
 				padding: 5px;
+			  background-color: #cccc;
 
 			}
 
@@ -31,8 +32,6 @@
 			}
 			
 			#title {
-			  background-color: #cccc;
-			  width: 384px;
 			  margin: auto;
 			  padding: 15px;
 			}
@@ -63,7 +62,7 @@
 
 	<body>
 
-    <div id="info"><h1 id="title">Mt Ngauruhoe</h1></div>
+    <div id="info"><h1 id="title">Mt Ngauruhoe</h1>View options: </div>
     
     <div class="modelInstr">
 	    <figure id="instrLeft">
@@ -103,6 +102,14 @@
 			init();
 			render(); // remove when using next line for animation loop (requestAnimationFrame)
 //      animate();
+
+      function capitilize(string) {
+        if (string) {
+          return string.replace(/_/g, " ").replace(/\w\S*/g, function(txt){
+            return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+          });
+        }
+      }
 
 			function init() {
 
@@ -144,7 +151,7 @@
 					objLoader.setMaterials( materials );
 					window.materials = materials;
 					for (var material in materials) {
-					  $("#info").append("<button id='" + material +"' class='matbutton'>" + material + "</button>");
+					  $("#info").append("<button id='" + material +"' class='matbutton'>" + capitilize(material) + "</button>");
 					}
 					$(".matbutton").click(function() {
 					  console.log("click", this.id);
